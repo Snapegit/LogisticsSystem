@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.HuoyunpiaojuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.HuoyunpiaojuEntity" id="huoyunpiaojuMap">
+        <result property="piaojudanhao" column="piaojudanhao"/>
+        <result property="huowumingcheng" column="huowumingcheng"/>
+        <result property="huowuleixing" column="huowuleixing"/>
+        <result property="qishidian" column="qishidian"/>
+        <result property="mudedi" column="mudedi"/>
+        <result property="huowushuliang" column="huowushuliang"/>
+        <result property="huowuzhongliang" column="huowuzhongliang"/>
+        <result property="huowujiage" column="huowujiage"/>
+        <result property="fahuoren" column="fahuoren"/>
+        <result property="fahuorenxingming" column="fahuorenxingming"/>
+        <result property="kehuzhanghao" column="kehuzhanghao"/>
+        <result property="kehuxingming" column="kehuxingming"/>
+        <result property="xiadanshijian" column="xiadanshijian"/>
+        <result property="dagaijuli" column="dagaijuli"/>
+        <result property="huowuyunfei" column="huowuyunfei"/>
+        <result property="piaojuzhuangtai" column="piaojuzhuangtai"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.HuoyunpiaojuView" >
+
+		SELECT  huoyunpiaoju.* FROM huoyunpiaoju  huoyunpiaoju 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.HuoyunpiaojuView" >
+		SELECT * FROM huoyunpiaoju  huoyunpiaoju <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
